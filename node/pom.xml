@@ -14,11 +14,14 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.eclipse.che</groupId>
+    <parent>
+        <artifactId>language-servers-dependencies</artifactId>
+        <groupId>org.eclipse.che.ls.dependenies</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
     <artifactId>language-servers-dependencies-node</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-
-    <packaging>pom</packaging>
     <name>Language Servers and Dependencies :: NodeJS</name>
     <properties>
         <TYPERSCRIPT_VERSION>2.8.4</TYPERSCRIPT_VERSION>
@@ -46,7 +49,7 @@
                 </configuration>
             </plugin>
             <plugin>
-             <groupId>org.apache.maven.plugins</groupId>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <version>1.8</version>
                 <executions>
@@ -63,7 +66,6 @@
                             </tasks>
                         </configuration>
                     </execution>
-
                     <!-- node: typescript deps -->
                     <execution>
                         <id>download-node_modules</id>
@@ -73,11 +75,11 @@
                         </goals>
                         <configuration>
                             <target>
-                                <mkdir dir="${basedir}/target"/>
-
+                                <mkdir dir="${basedir}/target" />
                                 <exec dir="${basedir}" executable="docker" failonerror="true">
                                     <arg line="run -v ${basedir}/target:/node_modules node:8.12-alpine sh -c 'npm install --prefix /node_modules typescript@${TYPERSCRIPT_VERSION} typescript-language-server@${TYPESCRIPT_LS_VERSION}; chmod -R 777 /node_modules'" />
-                                </exec>>
+                                </exec>
+                                &gt;
                             </target>
                         </configuration>
                     </execution>
