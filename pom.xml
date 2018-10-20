@@ -22,6 +22,7 @@
     <name>Language Servers and Dependencies :: Root</name>
     <modules>
         <module>node</module>
+        <module>php</module>
     </modules>
     <scm>
         <connection>scm:git:git@github.com:che-samples/ls-dependencies.git</connection>
