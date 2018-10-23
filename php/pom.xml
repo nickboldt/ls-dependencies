@@ -53,7 +53,7 @@
                             <target>
                                 <mkdir dir="${basedir}/target/php-ls" />
                                 <exec dir="${basedir}" executable="docker" failonerror="true">
-                                    <arg line="run -v ${basedir}/target/php-ls:/php webdevops/php-apache-dev:alpine-php7 sh -c 'cd /php; composer require jetbrains/phpstorm-stubs:dev-master; composer require felixfbecker/language-server:${PHP_LS_VERSION}; composer run-script --working-dir=vendor/felixfbecker/language-server parse-stubs; mv  vendor/* .; rm -rf vendor; chmod -R 777 /php'" />
+                                    <arg line="run -v ${basedir}/target/php-ls:/php webdevops/php-apache-dev:alpine-php7 sh -c 'cd /php; composer require jetbrains/phpstorm-stubs:dev-master; composer require felixfbecker/language-server:${PHP_LS_VERSION}; composer run-script --working-dir=vendor/felixfbecker/language-server parse-stubs; mv  vendor/* .; rm -rf vendor; cp /usr/local/bin/composer /php/composer; chmod -R 777 /php'" />
                                 </exec>
                                 <mkdir dir="${basedir}/target/zend-debugger"/>
                                 <!-- download Debugger.so from Zend repo -->
