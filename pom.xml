@@ -23,6 +23,7 @@
     <modules>
         <module>node</module>
         <module>php</module>
+        <module>python</module>
     </modules>
     <scm>
         <connection>scm:git:git@github.com:che-samples/ls-dependencies.git</connection>
