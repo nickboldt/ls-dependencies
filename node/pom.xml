@@ -73,7 +73,7 @@
                         <configuration>
                             <target>
                                 <mkdir dir="${basedir}/target" />
-                                <exec dir="${basedir}" executable="docker" failonerror="true">
+                                <exec dir="${basedir}" executable="docker" failonerror="true" resolveexecutable="true">
                                     <arg line="run -v ${basedir}/target:/node_modules node:8.12-alpine sh -c 'npm install --prefix /node_modules typescript@${TYPERSCRIPT_VERSION} typescript-language-server@${TYPESCRIPT_LS_VERSION}; chmod -R 777 /node_modules'" />
                                 </exec>
                                 &gt;

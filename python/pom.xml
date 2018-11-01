@@ -50,7 +50,7 @@
                             <target>
                                 <mkdir dir="${basedir}/target/python-ls" />
                                 <echo message="Running pip install to download pyls and its deps..." />
-                                <exec dir="${basedir}" executable="docker" failonerror="true">
+                                <exec dir="${basedir}" executable="docker" failonerror="true" resolveexecutable="true">
                                     <arg line="run -v ${basedir}/target/python-ls:/python -u root registry.access.redhat.com/rhscl/python-36-rhel7:1-30 sh -c 'pip install python-language-server[all]==${PYTHON_LS_VERSION} --install-option='--prefix=/python'; chmod -R 777 /python'" />
                                 </exec>
                             </target>
