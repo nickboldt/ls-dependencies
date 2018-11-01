@@ -55,7 +55,7 @@
                                 <mkdir dir="${basedir}/target/zend-debugger"/>
                                 <!-- download Debugger.so from Zend repo -->
                                 <echo message="Downloading ZendDebugger.so ..." />
-                                <get src="http://downloads.zend.com/studio_debugger/${ZEND_DEBUGGER_VERSION}.zip"
+                                <get src="http://downloads.zend.com/studio_debugger/${PHP_ZEND_DEBUGGER_VERSION}.zip"
                                 dest="${basedir}/target/zend-debugger/ZendDebugger.zip"
                                 verbose="false"
                                 usetimestamp="true"/>
