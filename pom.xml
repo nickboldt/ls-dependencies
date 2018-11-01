@@ -20,6 +20,30 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Language Servers and Dependencies :: Root</name>
+
+    <!-- to make it easier to audit what we're including in downstream builds, put all the dependency info in a single file -->
+    <properties>
+
+        <!-- wget https://github.com/OmniSharp/omnisharp-roslyn/releases/download/v${DOTNET_LS_VERSION}/omnisharp-linux-x64.tar.gz -->
+        <DOTNET_LS_VERSION>1.32.6</DOTNET_LS_VERSION>
+
+        <!-- npm install typescript@${TYPERSCRIPT_VERSION} typescript-language-server@${TYPESCRIPT_LS_VERSION} -->
+        <TYPERSCRIPT_VERSION>2.8.4</TYPERSCRIPT_VERSION>
+        <TYPESCRIPT_LS_VERSION>0.1.12</TYPESCRIPT_LS_VERSION>
+
+        <!-- composer require jetbrains/phpstorm-stubs:dev-master; 
+             composer require felixfbecker/language-server:${PHP_LS_VERSION}; 
+             composer run-script \-\-working-dir=vendor/felixfbecker/language-server parse-stubs 
+         -->
+        <PHP_LS_VERSION>5.4.2</PHP_LS_VERSION>
+        <!-- wget http://downloads.zend.com/studio_debugger/${ZEND_DEBUGGER_VERSION}.zip -->
+        <ZEND_DEBUGGER_VERSION>2018_10_02/ZendDebugger-rpm-x86_64-php-71-php-72</ZEND_DEBUGGER_VERSION>
+
+        <!-- pip install python-language-server[all]==${PYTHON_LS_VERSION} -->
+        <PYTHON_LS_VERSION>0.18.0</PYTHON_LS_VERSION>
+
+    </properties>
+
     <modules>
         <module>node</module>
         <module>php</module>

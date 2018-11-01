@@ -13,9 +13,6 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Language Servers and Dependencies :: Python</name>
-    <properties>
-        <PYTHON_LS_VERSION>0.18.0</PYTHON_LS_VERSION>
-    </properties>
     <build>
         <plugins>
             <plugin>

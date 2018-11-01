@@ -13,9 +13,6 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Language Servers and Dependencies :: PHP</name>
-    <properties>
-    <PHP_LS_VERSION>5.4.2</PHP_LS_VERSION>
-    </properties>
     <build>
         <plugins>
             <plugin>
@@ -58,12 +55,12 @@
                                 <mkdir dir="${basedir}/target/zend-debugger"/>
                                 <!-- download Debugger.so from Zend repo -->
                                 <echo message="Downloading ZendDebugger.so ..." />
-                                <get src="http://downloads.zend.com/studio_debugger/2018_10_02/ZendDebugger-rpm-x86_64-php-71-php-72.zip"
-                                dest="${basedir}/target/zend-debugger"
+                                <get src="http://downloads.zend.com/studio_debugger/${ZEND_DEBUGGER_VERSION}.zip"
+                                dest="${basedir}/target/zend-debugger/ZendDebugger.zip"
                                 verbose="false"
                                 usetimestamp="true"/>
                                 <echo message="Unzipping Zend archive..." />
-                                <unzip src="${basedir}/target/zend-debugger/ZendDebugger-rpm-x86_64-php-71-php-72.zip" dest="${basedir}/target/zend-debugger" />
+                                <unzip src="${basedir}/target/zend-debugger/ZendDebugger.zip" dest="${basedir}/target/zend-debugger" />
                                 <copy file="${basedir}/target/zend-debugger/php-7.1.x/ZendDebugger.so" tofile="${basedir}/target/php-ls/ZendDebugger.so"/>
                                 <delete dir="${basedir}/target/zend-debugger"/>
                             </target>

@@ -11,9 +11,6 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Language Servers and Dependencies :: .NET</name>
-    <properties>
-        <DOTNET_LS_VERSION>1.32.6</DOTNET_LS_VERSION>
-    </properties>
     <build>
         <plugins>
             <plugin>

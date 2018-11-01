@@ -24,10 +24,6 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Language Servers and Dependencies :: NodeJS</name>
-    <properties>
-        <TYPERSCRIPT_VERSION>2.8.4</TYPERSCRIPT_VERSION>
-        <TYPESCRIPT_LS_VERSION>0.1.12</TYPESCRIPT_LS_VERSION>
-    </properties>
     <build>
         <plugins>
             <plugin>
