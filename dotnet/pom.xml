@@ -50,13 +50,7 @@
                             <target>
                                 <mkdir dir="${basedir}/target/dotnet-ls" />
                                 <echo message="Downloading OmniSharp from GH releases..." />
-                                <get dest="${basedir}/target/dotnet-ls" src="https://github.com/OmniSharp/omnisharp-roslyn/releases/download/v${DOTNET_LS_VERSION}/omnisharp-linux-x64.zip" usetimestamp="true" verbose="false" />
-                                <echo message="Unzipping archive..." />
-                                <unzip dest="${basedir}/target/dotnet-ls" src="${basedir}/target/dotnet-ls/omnisharp-linux-x64.zip" />
-                                <exec dir="${basedir}" executable="chmod" failonerror="true">
-                                <arg line="+x ${basedir}/target/dotnet-ls/run " />
-                                </exec>
-                                <delete file="${basedir}/target/dotnet-ls/omnisharp-linux-x64.zip" />
+                                <get dest="${basedir}/target/dotnet-ls" src="https://github.com/OmniSharp/omnisharp-roslyn/releases/download/v${DOTNET_LS_VERSION}/omnisharp-linux-x64.tar.gz" usetimestamp="true" verbose="false" />
                             </target>
                         </configuration>
                     </execution>
