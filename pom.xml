@@ -15,7 +15,7 @@
         <groupId>org.eclipse.che.depmgt</groupId>
         <version>6.12.0</version>
     </parent>
-    <groupId>org.eclipse.che.ls.dependenies</groupId>
+    <groupId>org.eclipse.che.ls.dependencies</groupId>
     <artifactId>language-servers-dependencies</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -25,6 +25,8 @@
         <module>php</module>
         <module>python</module>
         <module>dotnet</module>
+        <module>golang</module>
+        <module>bayesian</module>
     </modules>
     <scm>
         <connection>scm:git:git@github.com:che-samples/ls-dependencies.git</connection>
