@@ -55,17 +55,9 @@
                                 <exec dir="${basedir}" executable="docker" failonerror="true">
                                     <arg line="run -v ${basedir}/target/php-ls:/php webdevops/php-apache-dev:alpine-php7 sh -c 'cd /php; composer require jetbrains/phpstorm-stubs:dev-master; composer require felixfbecker/language-server:${PHP_LS_VERSION}; composer run-script --working-dir=vendor/felixfbecker/language-server parse-stubs; mv  vendor/* .; rm -rf vendor; cp /usr/local/bin/composer /php/composer; chmod -R 777 /php'" />
                                 </exec>
-                                <mkdir dir="${basedir}/target/zend-debugger"/>
-                                <!-- download Debugger.so from Zend repo -->
-                                <echo message="Downloading ZendDebugger.so ..." />
-                                <get src="http://downloads.zend.com/studio_debugger/2018_10_02/ZendDebugger-rpm-x86_64-php-71-php-72.zip"
-                                dest="${basedir}/target/zend-debugger"
-                                verbose="false"
-                                usetimestamp="true"/>
-                                <echo message="Unzipping Zend archive..." />
-                                <unzip src="${basedir}/target/zend-debugger/ZendDebugger-rpm-x86_64-php-71-php-72.zip" dest="${basedir}/target/zend-debugger" />
-                                <copy file="${basedir}/target/zend-debugger/php-7.1.x/ZendDebugger.so" tofile="${basedir}/target/php-ls/ZendDebugger.so"/>
-                                <delete dir="${basedir}/target/zend-debugger"/>
+                                <exec dir="${basedir}" executable="docker" failonerror="true">
+                                    <arg line="run -v ${basedir}/target/php-ls:/php php-zendserver:9.1 sh -c 'cp /usr/local/zend/lib/debugger/php-7.1.x/ZendDebugger.so /php/ZendDebugger.so; chmod -R 777 /php'" />
+                                </exec>
                             </target>
                         </configuration>
                     </execution>
