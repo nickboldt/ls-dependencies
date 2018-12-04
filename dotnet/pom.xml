@@ -12,7 +12,7 @@
     <packaging>pom</packaging>
     <name>Language Servers and Dependencies :: .NET</name>
     <properties>
-        <DOTNET_LS_VERSION>1.32.8</DOTNET_LS_VERSION>
+        <DOTNET_LS_VERSION>1.31.1</DOTNET_LS_VERSION>
     </properties>
     <build>
         <plugins>
